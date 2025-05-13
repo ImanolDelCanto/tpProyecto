@@ -1,0 +1,115 @@
+import { PropertyCard } from "@/components/property-card"
+
+export function PropertyGrid() {
+  const properties = [
+    {
+      id: "1",
+      title: "Apartamento moderno en Palermo",
+      location: "Palermo, Buenos Aires",
+      price: 75,
+      currency: "$",
+      rating: 4.92,
+      reviews: 128,
+      images: ["/placeholder.svg?height=500&width=500"],
+      host: "Anfitrión: María",
+      dates: "24-29 may.",
+      badge: "Popular",
+    },
+    {
+      id: "2",
+      title: "Loft con vista en Puerto Madero",
+      location: "Puerto Madero, Buenos Aires",
+      price: 120,
+      currency: "$",
+      rating: 4.85,
+      reviews: 95,
+      images: ["/placeholder.svg?height=500&width=500"],
+      host: "Anfitrión: Carlos",
+      dates: "1-6 jun.",
+      badge: "Destacado",
+    },
+    {
+      id: "3",
+      title: "Casa histórica en San Telmo",
+      location: "San Telmo, Buenos Aires",
+      price: 95,
+      currency: "$",
+      rating: 4.78,
+      reviews: 112,
+      images: ["/placeholder.svg?height=500&width=500"],
+      host: "Anfitrión: Laura",
+      dates: "10-15 jun.",
+      badge: "Popular",
+    },
+    {
+      id: "4",
+      title: "Estudio acogedor en Recoleta",
+      location: "Recoleta, Buenos Aires",
+      price: 65,
+      currency: "$",
+      rating: 4.9,
+      reviews: 87,
+      images: ["/placeholder.svg?height=500&width=500"],
+      host: "Anfitrión: Martín",
+      dates: "5-10 jul.",
+    },
+    {
+      id: "5",
+      title: "Penthouse de lujo con terraza",
+      location: "Belgrano, Buenos Aires",
+      price: 150,
+      currency: "$",
+      rating: 4.96,
+      reviews: 64,
+      images: ["/placeholder.svg?height=500&width=500"],
+      host: "Anfitrión: Sofía",
+      dates: "15-20 jul.",
+      badge: "Lujo",
+    },
+    {
+      id: "6",
+      title: "Apartamento familiar en Caballito",
+      location: "Caballito, Buenos Aires",
+      price: 85,
+      currency: "$",
+      rating: 4.82,
+      reviews: 73,
+      images: ["/placeholder.svg?height=500&width=500"],
+      host: "Anfitrión: Diego",
+      dates: "1-6 ago.",
+    },
+    {
+      id: "7",
+      title: "Casa con jardín en Núñez",
+      location: "Núñez, Buenos Aires",
+      price: 110,
+      currency: "$",
+      rating: 4.88,
+      reviews: 59,
+      images: ["/placeholder.svg?height=500&width=500"],
+      host: "Anfitrión: Ana",
+      dates: "10-15 ago.",
+      badge: "Popular",
+    },
+    {
+      id: "8",
+      title: "Loft artístico en Villa Crespo",
+      location: "Villa Crespo, Buenos Aires",
+      price: 70,
+      currency: "$",
+      rating: 4.75,
+      reviews: 92,
+      images: ["/placeholder.svg?height=500&width=500"],
+      host: "Anfitrión: Pablo",
+      dates: "20-25 ago.",
+    },
+  ]
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {properties.map((property) => (
+        <PropertyCard key={property.id} {...property} />
+      ))}
+    </div>
+  )
+}
