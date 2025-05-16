@@ -1,5 +1,6 @@
 import { Heart, Star } from "lucide-react"
 import Image from "next/image"
+import { DatePicker } from "./date-picker"
 
 interface PropertyCardProps {
   id: string
@@ -31,10 +32,6 @@ export function PropertyCard({
   return (
     <div className="group">
       <div className="relative aspect-square overflow-hidden rounded-xl">
-        <button className="absolute right-3 top-3 z-10 h-8 w-8 rounded-full bg-white/40 backdrop-blur-sm hover:bg-white/60 flex items-center justify-center">
-          <Heart className="h-4 w-4" />
-          <span className="sr-only">Añadir a favoritos</span>
-        </button>
         {badge && (
           <span className="absolute left-3 top-3 z-10 bg-white/80 text-black text-xs font-semibold px-2 py-1 rounded-full">
             {badge}
@@ -59,10 +56,18 @@ export function PropertyCard({
         </div>
         <p className="text-sm text-gray-500">{location}</p>
         <p className="text-sm text-gray-500">{host}</p>
-        <p className="text-sm text-gray-500">{dates}</p>
-        <p className="text-base font-semibold mt-1">
-          {currency} {price} <span className="font-normal">noche</span>
-        </p>
+
+        {/* Selector de fechas */}
+        <div className="mt-2">
+          <DatePicker compact />
+        </div>
+
+        <div className="flex justify-between items-center mt-2">
+          <p className="text-base font-semibold">
+            {currency} {price} <span className="font-normal">noche</span>
+          </p>
+          <button className="text-xs bg-rose-500 text-white px-3 py-1 rounded-lg hover:bg-rose-600">Reservar</button>
+        </div>
       </div>
     </div>
   )
