@@ -47,13 +47,6 @@ export function Navbar() {
                 <span className="sm:hidden">Publicar</span>
               </Button>
             </Link>
-
-            <div className="flex items-center border border-gray-300 rounded-full p-2 shadow-sm hover:shadow-md transition-shadow">
-              <Menu className="h-5 w-5 text-gray-600" />
-              <div className="ml-2 bg-gray-500 rounded-full h-8 w-8 flex items-center justify-center">
-                <User className="h-5 w-5 text-white" />
-              </div>
-            </div>
           </div>
         </div>
       </div>

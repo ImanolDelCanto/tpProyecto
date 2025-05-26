@@ -3,7 +3,6 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Star, Share, Heart, User, Calendar } from "lucide-react"
-import { BookingModal } from "./booking-modal"
 import { format } from "date-fns"
 
 interface PropertyDetailProps {
@@ -216,15 +215,6 @@ export function PropertyDetail({
           </div>
         </div>
       </div>
-
-      <BookingModal
-        isOpen={isBookingModalOpen}
-        onClose={() => setIsBookingModalOpen(false)}
-        propertyId={id}
-        propertyTitle={title}
-        price={price}
-        currency={currency}
-      />
     </div>
   )
 }

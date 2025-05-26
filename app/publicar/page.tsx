@@ -41,8 +41,8 @@ export default function PublicarPropiedad() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Aquí iría la lógica para enviar los datos
-    // Como es estático, simplemente redirigimos al inicio
+    // Aca iria la lógica para enviar los datos
+    // Como es estatico, simplemente redirigimos al inicio
     router.push("/")
   }
 

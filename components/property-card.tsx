@@ -17,26 +17,16 @@ interface PropertyCardProps {
 }
 
 export function PropertyCard({
-  id,
   title,
   location,
   price,
   currency,
   rating,
-  reviews,
-  images,
   host,
-  dates,
-  badge,
 }: PropertyCardProps) {
   return (
     <div className="group">
       <div className="relative aspect-square overflow-hidden rounded-xl">
-        {badge && (
-          <span className="absolute left-3 top-3 z-10 bg-white/80 text-black text-xs font-semibold px-2 py-1 rounded-full">
-            {badge}
-          </span>
-        )}
         <div className="relative h-full w-full">
           <Image
             src={"/maqueta.jpg"}
