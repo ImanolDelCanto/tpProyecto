@@ -91,17 +91,13 @@ export function PropertyCard({
       <div className="relative aspect-square overflow-hidden rounded-xl">
         <div className="relative h-full w-full">
           <Image
-            src="/placeholder.svg?height=400&width=400"
+            src="/maqueta.jpg"
             alt={title}
             fill
             className="object-cover transition-transform group-hover:scale-105"
           />
         </div>
-        {currency !== "ARS" && (
-          <div className="absolute top-3 left-3 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium">
-            {currency}
-          </div>
-        )}
+       
       </div>
 
       <div className="mt-3 space-y-2">
