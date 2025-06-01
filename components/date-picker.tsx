@@ -26,6 +26,16 @@ export function DatePicker({ onDateChange, className, compact = false }: DatePic
     return format(date, "d/MM/yyyy", { locale: es })
   }
 
+  const handleDateChange = (type: "checkIn" | "checkOut", date: Date | null) => {
+    if (type === "checkIn") {
+      setCheckIn(date)
+      if (onDateChange) onDateChange({ checkIn: date, checkOut })
+    } else {
+      setCheckOut(date)
+      if (onDateChange) onDateChange({ checkIn, checkOut: date })
+    }
+  }
+
   return (
     <div className={cn("relative", className)}>
       <button
@@ -54,8 +64,7 @@ export function DatePicker({ onDateChange, className, compact = false }: DatePic
               value={checkIn ? format(checkIn, "yyyy-MM-dd") : ""}
               onChange={(e) => {
                 const date = e.target.value ? new Date(e.target.value) : null
-                setCheckIn(date)
-                if (onDateChange) onDateChange({ checkIn: date, checkOut })
+                handleDateChange("checkIn", date)
               }}
             />
           </div>
@@ -67,8 +76,7 @@ export function DatePicker({ onDateChange, className, compact = false }: DatePic
               value={checkOut ? format(checkOut, "yyyy-MM-dd") : ""}
               onChange={(e) => {
                 const date = e.target.value ? new Date(e.target.value) : null
-                setCheckOut(date)
-                if (onDateChange) onDateChange({ checkIn, checkOut: date })
+                handleDateChange("checkOut", date)
               }}
             />
           </div>
